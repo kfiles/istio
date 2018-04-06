@@ -14,6 +14,6 @@ roleRef:
   name: istio-ca-{{ .Release.Namespace }}
 subjects:
   - kind: ServiceAccount
-    name: istio-ca-service-account
+    name: {{ template "security.serviceAccountName" . }}
     namespace: {{ .Release.Namespace }}
 {{- end }}

@@ -1,6 +1,6 @@
 {{- define "policy_container" }}
     spec:
-      serviceAccountName: istio-mixer-service-account
+      serviceAccountName: {{ template "mixer.serviceAccountName" . }}
       volumes:
       - name: istio-certs
         secret:
@@ -73,7 +73,7 @@
 
 {{- define "telemetry_container" }}
     spec:
-      serviceAccountName: istio-mixer-service-account
+      serviceAccountName: {{ template "mixer.serviceAccountName" . }}
       volumes:
       - name: istio-certs
         secret:

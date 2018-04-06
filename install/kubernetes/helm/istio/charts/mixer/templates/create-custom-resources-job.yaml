@@ -19,7 +19,7 @@ spec:
         app: {{ template "mixer.name" . }}
         release: {{ .Release.Name }}
     spec:
-      serviceAccountName: istio-mixer-service-account
+      serviceAccountName: {{ template "mixer.serviceAccountName" . }}
       containers:
         - name: hyperkube
           image: "{{ .Values.global.hyperkube.repository }}:{{ .Values.global.hyperkube.tag }}"

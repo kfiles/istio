@@ -22,6 +22,6 @@ Service account name.
 {{- if .Values.global.rbacEnabled -}}
 {{- template "security.fullname" . -}}-service-account
 {{- else }}
-{{- .Values.serviceAccountName | trunc 63 | trimSuffix "-" -}}-service-account
+{{- .Values.serviceAccountName | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 {{- end -}}
